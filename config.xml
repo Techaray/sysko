@@ -7,7 +7,7 @@
     <author email="support@xyz.com" href="http://xyz.com">
         PhoneGap Team
     </author>
-    <content src="SaveInfo.html" />
+    <content src="index.html" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
