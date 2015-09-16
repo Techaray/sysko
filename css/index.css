@@ -113,28 +113,3 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
-.text-center.header {
-    padding: 12px 1px;
-}
-.custom-captcha {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
-    border: 0 none;
-    box-shadow: none !important;
-    font-size: 22px;
-    font-style: italic;
-    font-weight: bold;
-    color: #66ccff;
-}
-.col-md-6.captcha-field {
-    position: relative;
-}
-.captcha-field img {
-    position: absolute;
-    right: 19px;
-    top: 8px;
-    width: 21px;
-}
-.validation-cross
-{
-    display: none;
-}
