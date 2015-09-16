@@ -14,7 +14,6 @@ $(document).ready(function(){
     }
 
     /* */
-    ['packages','kit_code','invoice_value','imei_number','invoice_number','date_of_purchase','device_type','customer_name','address','pincode','email','mobile_number','state','city','alternate_mobile','captcha']
 
     var data = {
       'packages': $('#packages').val(),
