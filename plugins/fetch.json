@@ -1,8 +1,8 @@
 {
-    "cordova-plugin-whitelist": {
+    "org.apache.cordova.geolocation": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-whitelist@1"
+            "id": "org.apache.cordova.geolocation"
         },
         "is_top_level": true,
         "variables": {}

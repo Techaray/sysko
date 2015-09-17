@@ -19,29 +19,93 @@
     specific language governing permissions and limitations
     under the License.
 -->
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Insdata</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Sysco</h1>
-            <div id="deviceready" class="blink">
-                <!--<p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>-->
-                <img src='img/progress_bar.gif' />
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-    </body>
+<html lang="en">
+<head>
+  <title>Offer Ride</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index1.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+	<div class="text-center header">
+	    <h1>GoYaar</h1>
+	    <p class="lead">Enter Ride Data</p>
+  	</div>	
+	<div class="row text-center">
+	  <div class="custom-circle col-md-4 center">
+	    <a href="OfferRide.html" class="thumbnail center">
+	      <p>Offer Ride</p>   
+	    </a>
+	  </div>
+	  <div class="custom-circle col-md-4 center">
+	    <a href="FindRide.html" class="thumbnail center">
+	      <p>Find Ride</p>   
+	    </a>
+	  </div>
+    <div class="custom-circle col-md-4 center">
+      <a href="GetLocation.html" class="thumbnail center">
+        <p>Get Location</p>   
+      </a>
+    </div>
+	</div>
+
+</div>
+<script>
+
+
+//{
+/*
+
+http://goyaar.testingwebsitedesign.com/saveApiRide?person_name=simrat&departure=ziraa&arrival=chandigarh&departure_date=2015-28-08%2013:00&return_date=2015-28-08%2013:00&stopovers=morinda&price=100&ride_detail=test&no_of_seats=3&max_luggage_size=medium&leave_at=%22test%22&detaur=test
+
+*/
+$(document).ready(function(){ 
+  $("#offer_ride_form").submit(function() {
+
+    var data = {
+      'person_name': $('#person_name').val(),
+      'departure': $('#departure').val(),
+      'arrival': $('#arrival').val(),
+      'chandigarh': $('#chandigarh').val(),
+      'departure_date': $('#departure_date').val(),
+      'return_date': $('#return_date').val(),
+      'stopovers': $('#stopovers').val(),
+      'price': $('#price').val(),
+      'ride_detail': $('#ride_detail').val(),
+      'no_of_seats': $('#no_of_seats').val(),
+      'max_luggage_size': $('#max_luggage_size').val(),
+      'leave_at': $('#leave_at').val(),
+      'detaur': $('#detaur').val()
+      };
+
+    $.ajax({
+          type: 'GET',
+          url: 'http://goyaar.testingwebsitedesign.com/saveApiRide',
+          crossDomain: true,
+          data: data,
+          cache: false,
+          datatype: 'jsonp',
+
+          success: function(data) {
+          alert('Data Added');
+          }
+        });
+
+    return false;
+  });
+});
+
+</script>
+</head>
+<body>
+
+
+
+
+</body>
 </html>

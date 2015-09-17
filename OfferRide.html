@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html lang="en">
+<head>
+  <title>Offer Ride</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index1.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+  <script src="js/default.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+  <div class="text-center header">
+    <h1>GoYaar</h1>
+    <p class="lead">Enter Ride Data</p>
+  </div>
+  <form  id="offer_ride_form">
+    <div class="form-group">
+              <label class="col-md-4 control-label">Person Name</label>
+              <div class="col-md-6">
+                <input type="text" id="person_name" class="form-control" name="person_name" value="">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Departure</label>
+              <div class="col-md-6">
+                <input type="text" id="departure" class="form-control" name="departure" value="">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Arrival</label>
+              <div class="col-md-6">
+                <input type="text" id="arrival" class="form-control" name="arrival" value="">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Departure Date</label>
+              <div class="col-md-6">
+                <input type="text" id="departure_date" class="form-control" name="departure_date" value="">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Return Date</label>
+              <div class="col-md-6">
+                <input type="text" id="return_date" class="form-control" name="return_date" value="">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Stop Overs</label>
+              <div class="col-md-6">
+                <input type="text" id="stopovers" class="form-control" name="stopovers" value="">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Price</label>
+              <div class="col-md-6">
+                <input type="text" id="price" class="form-control" name="price" value="">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Ride Detail</label>
+              <div class="col-md-6">
+                <textarea type="text" id="ride_detail" class="form-control" name="ride_detail"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">No. Of Seats</label>
+              <div class="col-md-6">
+                <!--<input type="text" class="form-control" name="no_of_seats" value="{{ old('no_of_seats') }}">-->
+                <select class="form-control" id="no_of_seats" name="no_of_seats">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Max Luggae Size</label>
+              <div class="col-md-6">
+                <!--<input type="text" class="form-control" name="max_luggage_size" value="{{ old('max_luggage_size') }}">-->
+                <select class="form-control" id="max_luggage_size" name="max_luggage_size">
+                  <option value="small">Small</option>
+                  <option value="medium">Medium</option>
+                  <option value="big">Big</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Leave At</label>
+              <div class="col-md-6">
+                <!--<input type="text" class="form-control" name="leave_at" value="{{ old('leave_at') }}">-->
+                <select class="form-control" id="leave_at" name="leave_at">
+                  <option value="ON_TIME">Right On Time</option>
+                  <option value="FIFTEEN_MINUTES">In a 15 minute window</option>
+                  <option value="THIRTY_MINUTES">In a 30 minute window</option>
+                  <option value="ONE_HOUR">In a 1 hour window</option>
+                  <option value="TWO_HOURS">In a 2 hour window</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Detour</label>
+              <div class="col-md-6">
+                <!--<input type="text" class="form-control" name="detaur" value="{{ old('detaur') }}">-->
+                <select class="form-control" id="detaur" name="detaur">
+                  <option value="NONE">I'm not willing to make a detour</option>
+                  <option value="FIFTEEN_MINUTES">15 minute detour max.</option>
+                  <option value="THIRTY_MINUTES">30 minute detour max.</option>
+                  <option value="WHATEVER_IT_TAKES">Anything is fine</option>
+                </select>
+              </div>
+            </div>
+            
+              <div class="form-group">
+              <div class="col-md-6 col-md-offset-4 text-center">
+                <input type='submit' name="offer_ride" value="Offer Ride" class="btn btn-default">
+              </div>
+            </div>
+    
+  </form>
+</div>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+alert('this is jquery running');
+   //app.initialize();
+
+            document.addEventListener("deviceready", onDeviceReady, false);
+
+            // device APIs are available
+            //
+            function onDeviceReady() {
+                navigator.geolocation.getCurrentPosition(onSuccess, onError1);
+            }
+
+            // onSuccess Geolocation
+            //
+            function onSuccess(position) {
+              alert('onSuccess');
+                var element = document.getElementById('geolocation');
+               element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                                    'Longitude: '          + position.coords.longitude             + '<br />' +
+                                    'Altitude: '           + position.coords.altitude              + '<br />' +
+                                    'Accuracy: '           + position.coords.accuracy              + '<br />' +
+                                    'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+                                    'Heading: '            + position.coords.heading               + '<br />' +
+                                    'Speed: '              + position.coords.speed                 + '<br />' +
+                                    'Timestamp: '          + position.timestamp                    + '<br />';
+            }
+
+            // onError Callback receives a PositionError object
+            //
+            function onError1(error) {
+                alert('code: '    + error.code    + '\n' +
+                      'message: ' + error.message + '\n');
+            }
+</script>
+</body>
+
+</html>
