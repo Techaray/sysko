@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.goyaar" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Goyaar</name>
+<widget id="com.phonegap.sysko" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Sysko</name>
     <description>
-        This Application is used to offer rides and check rides.
+        This Application is to save information.
     </description>
     <author email="gursimrat.techarays@gmail.com" href="www.google.com">
-        Goyaar Team
+        Sysko Team
     </author>
     <content src="index.html" />
     <preference name="permissions" value="none" />
