@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.sysko" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Sysko</name>
+<widget id="com.phonegap.xyz" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>XYZ</name>
     <description>
-        This Application is to save information.
+        Hello World sample application that responds to the deviceready event.
     </description>
-    <author email="gursimrat.techarays@gmail.com" href="www.google.com">
-        Sysko Team
+    <author email="support@xyz.com" href="http://xyz.com">
+        PhoneGap Team
     </author>
     <content src="index.html" />
     <preference name="permissions" value="none" />
