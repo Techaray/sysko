@@ -24,7 +24,7 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#7fb8d6;
+    background-color:#70944D;
     background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
@@ -111,4 +111,84 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+}
+.tagline {
+    font-size: 15px;
+    text-transform: capitalize;
+}
+.mobile-button {
+    background: rgb(5, 73, 36) none repeat scroll 0 0;
+    border: 1px solid;
+    border-radius: 7px;
+    color: #70944d;
+    display: inline-block;
+    font-size: 21px;
+    margin-top: 41px;
+    padding: 1px 20px 2px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.text-center.header {
+    padding: 12px 1px;
+}
+.custom-captcha {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+    border: 0 none;
+    box-shadow: none;
+    color: #c6d4b8;
+    font-size: 50px;
+    font-weight: bold;
+    height: 68px;
+    text-align: center;
+}
+.col-md-6.captcha-field {
+    position: relative;
+}
+.captcha-field img {
+    position: absolute;
+    right: 19px;
+    top: 8px;
+    width: 21px;
+}
+.validation-cross
+{
+    display: none;
+}
+.heading {
+    border-bottom: 1px solid;
+    font-family: sans-serif;
+    font-size: 31px;
+    padding-bottom: 6px;
+    text-transform: capitalize;
+}
+.custom-menu li {
+    background: rgb(5,73,36);
+    border: 1px solid;
+    border-radius: 6px !important;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.custom-menu a {
+    color: #70944d;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+.col-centered
+{
+    text-align: center;
+}
+.submit-button {
+    background: rgb(5, 73, 36) none repeat scroll 0 0;
+    border: 1px solid;
+    border-radius: 7px;
+    color: #70944d;
+    display: inline-block;
+    font-size: 21px;
+    padding: 1px 20px 2px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.form-control {
+    background: #c6d4b8 none repeat scroll 0 0;
+    border: medium none;
 }
