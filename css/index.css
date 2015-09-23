@@ -181,3 +181,6 @@ h1 {
     background: #c6d4b8 none repeat scroll 0 0;
     border: medium none;
 }
+.front.section-logo.col-centered {
+    margin-top: 50%;
+}
