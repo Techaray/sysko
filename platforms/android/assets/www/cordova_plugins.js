@@ -20,6 +20,13 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/cordova-plugin-datepicker/www/android/DatePicker.js",
+        "id": "cordova-plugin-datepicker.DatePicker",
+        "clobbers": [
+            "datePicker"
+        ]
+    },
+    {
         "file": "plugins/cordova-plugin-file/www/DirectoryEntry.js",
         "id": "cordova-plugin-file.DirectoryEntry",
         "clobbers": [
@@ -171,6 +178,7 @@ module.exports.metadata =
 {
     "cordova-plugin-whitelist": "1.0.0",
     "cordova-plugin-file-transfer": "1.3.0",
+    "cordova-plugin-datepicker": "0.8.9",
     "cordova-plugin-file": "3.0.0"
 }
 // BOTTOM OF METADATA

@@ -53,6 +53,21 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
+
+            var options = {
+                date: new Date(),
+                mode: 'date'
+            };
+
+            function onSuccess(date) {
+                alert('Selected date: ' + date);
+            }
+
+            function onError(error) { // Android only
+                alert('Error: ' + error);
+            }
+
+            datePicker.show(options, onSuccess, onError);
         </script>
     </body>
 </html>
