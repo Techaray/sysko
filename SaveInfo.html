@@ -29,6 +29,9 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/default.js"></script>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
 
 </head>
 <body onload="makeCaptcha()">
@@ -173,10 +176,29 @@
             </div>
     
   </form>
-</div>
-<script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //$("#date_of_purchase").datepicker();
+         /*$("#date_of_purchase").datepicker(
+        {
+          stepMonths: 0,
+        beforeShowDay: function (date) {
 
+        if (date.getDate() > 15 ) {
+            return [true, ''];
+        }
+        return [false, ''];
+       }
+    });*/
+     $("#date_of_purchase").datepicker({
+        "dateFormat": "dd-mm-yy",
+        "minDate": -14,
+        "maxDate": new Date()
+    })
+    .attr("readonly", true);
+    });
+</script>
 </body>
 
 </html>

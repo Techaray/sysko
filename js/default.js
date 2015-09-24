@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+
   $("#offer_ride_form").submit(function() {
 
     /* VALIDATION */
