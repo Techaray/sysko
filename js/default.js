@@ -1,7 +1,56 @@
 $(document).ready(function(){
 
+  /* SUBMIT */
+
+  $('#temp-submit').click(function(){
+    $('#submit-button-form').show();
+    $('#submit-field-form').hide();
+  });
+
+  $('#temp-submit').click(function(){
+    $('#submit-button-form').hide();
+    $('#submit-field-form').show();
+  });
+
+  $('#back').click(function(){
+    $('#submit-field-form').show();
+    $('#submit-confirm-form').hide();
+    $("input[type='submit']").val("Submit");
+  });
+
+  /* PRODUCT TYPE */
+
+  $('#product_type').change(function(){
+    var value = $(this).val();
+    if( value == "MOBILE" || value == "TAB")
+    {
+      var check = 'show';
+    }
+    else
+    {
+      var check = 'hide';
+    }
+    
+
+    if( check == "hide" )
+    {
+      $('#imei_number_upperdiv').slideUp();
+      $('#device_type_upperdiv').slideUp();
+      $('#imei_number').attr('disabled',true);
+      $('#device_type').attr('disabled',true);
+    }
+    if( check == "show" )
+    {
+      $('#imei_number_upperdiv').slideDown();
+      $('#device_type_upperdiv').slideDown();
+      $('#imei_number').attr('disabled',false);
+      $('#device_type').attr('disabled',false);
+    }
+  })
 
   $("#offer_ride_form").submit(function() {
+
+    
 
     /* VALIDATION */
 
@@ -14,6 +63,14 @@ $(document).ready(function(){
       return false;
     }
 
+    if ($("input[type='submit']").val() == "Submit") {
+        alert("Please confirm if everything is correct");
+        $('#submit-field-form').hide();
+        $('#submit-confirm-form').show();
+        $("input[type='submit']").val("Confirmed");
+        return false;
+    }
+
     /* */
 
     var data = {
@@ -24,6 +81,7 @@ $(document).ready(function(){
       'invoice_number': $('#invoice_number').val(),
       'date_of_purchase': $('#date_of_purchase').val(),
       'device_type': $('#device_type').val(),
+      'product_type': $('#product_type').val(),
       'customer_name': $('#customer_name').val(),
       'address': $('#address').val(),
       'pincode': $('#pincode').val(),

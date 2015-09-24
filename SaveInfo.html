@@ -29,9 +29,6 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/default.js"></script>
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
 
 </head>
 <body onload="makeCaptcha()">
@@ -41,144 +38,191 @@
     <h1 class="heading">Submit Details</h1>
     <p class="lead"></p>
   </div>
-  <form  id="offer_ride_form">
-    <div class="form-group">
-              <label class="col-md-4 control-label">Packages</label>
-              <div class="col-md-6">
-                 <select class="form-control" id="packages" name="packages">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
+  <div class="row">
+    <div class="col-md-12">
+    <form  id="offer_ride_form">
+      <div id="submit-field-form">
+      <div class="form-group">
+                <label class="col-md-4 control-label">Packages</label>
+                <div class="col-md-6">
+                   <select class="form-control" id="packages" name="packages" required>
+                    <option value="199">Plan 199</option>
+                    <option value="399">Plan 399</option>
+                    <option value="599">Plan 599</option>
+                    <option value="899">Plan 899</option>
+                    <option value="1099">Plan 1099</option>
+                    <option value="1499">Plan 1499</option>
+                    <option value="1999">Plan 1999</option>
+                  </select>
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label class="col-md-4 control-label">Kit Code</label>
-              <div class="col-md-6">
-                <input type="text" id="kit_code" class="form-control" name="kit_code" value="">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-4 control-label">Invoice Value</label>
-              <div class="col-md-6">
-                <input type="text" id="invoice_value" class="form-control" name="invoice_value" value="">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-4 control-label">Invoice Number</label>
-              <div class="col-md-6">
-                <input type="text" id="invoice_number" class="form-control" name="invoice_number" value="">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-4 control-label">IMEI Number</label>
-              <div class="col-md-6">
-                <input type="text" id="imei_number" class="form-control" name="imei_number" value="">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-4 control-label">Date Of Purchase</label>
-              <div class="col-md-6">
-                <input type="text" id="date_of_purchase" class="form-control" name="date_of_purchase" value="" required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-4 control-label">Device Type</label>
-              <div class="col-md-6">
-                <input type="text" id="device_type" class="form-control" name="device_type" value="">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-4 control-label">Customer Name</label>
-              <div class="col-md-6">
-                <input type="text" id="customer_name" class="form-control" name="customer_name" value="" required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-4 control-label">Address</label>
-              <div class="col-md-6">
-                <textarea type="text" id="address" class="form-control" name="address" required></textarea>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-4 control-label">Pincode</label>
-              <div class="col-md-6">
-                <input type="text" id="pincode" class="form-control" name="pincode">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-4 control-label">Email</label>
-              <div class="col-md-6">
-                <input type="text" id="email" class="form-control" name="email" required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-4 control-label">Mobile Number</label>
-              <div class="col-md-6">
-                <input type="text" id="mobile_number" class="form-control" name="mobile_number">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-4 control-label">Alternate Mobile</label>
-              <div class="col-md-6">
-                <input type="text" id="alternate_mobile" class="form-control" name="alternate_mobile">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-4 control-label">State</label>
-              <div class="col-md-6">
-                <input type="text" id="state" class="form-control" name="state" required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-4 control-label">City</label>
-              <div class="col-md-6">
-                <input type="text" id="city" class="form-control" name="city" required>
-              </div>
-            </div>
-
-             <div class="form-group">
-              <label class="col-md-4 control-label">Captcha</label>
-              <div class="col-md-6">
-                <input type="text" id="alternate_mobile" class="form-control custom-captcha" name="captcha_check" disabled="disabled">
-                <input type="hidden" id="alternate_mobile" class="form-control custom-captcha-compare" name="custom-captcha-compare">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-4 control-label">Enter Captcha</label>
-              <div class="col-md-6 captcha-field">
-                <input type="text" id="alternate_mobile" class="form-control custom-captcha-compare-with" name="custom-captcha-compare-with" required>
-                 <img class="captcha-cross validation-cross" src='img/cross.png' />
-              </div>
-            </div>
-
-            
               <div class="form-group">
-              <div class="col-md-6 col-md-offset-4 text-center">
-                <input  type='submit' name="offer_ride" value="Submit" class="submit-button">
+                <label class="col-md-4 control-label">Kit Code</label>
+                <div class="col-md-6">
+                  <input type="text" id="kit_code" class="form-control" name="kit_code" value="" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-4 control-label">Invoice Value</label>
+                <div class="col-md-6">
+                  <input type="text" id="invoice_value" class="form-control" name="invoice_value" value="" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-4 control-label">Invoice Number</label>
+                <div class="col-md-6">
+                  <input type="text" id="invoice_number" class="form-control" name="invoice_number" value="">
+                </div>
+              </div>
+
+              <div id="imei_number_upperdiv" class="form-group">
+                <label class="col-md-4 control-label">IMEI Number</label>
+                <div class="col-md-6">
+                  <input type="text" id="imei_number" class="form-control" name="imei_number" value="" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-4 control-label">Date Of Purchase</label>
+                <div class="col-md-6">
+                  <input type="text" id="date_of_purchase" class="form-control" name="date_of_purchase" value="" required>
+                </div>
+              </div>
+
+              <div id="device_type_upperdiv" class="form-group">
+                <label class="col-md-4 control-label">Device Type</label>
+                <div class="col-md-6">
+                   <select class="form-control" id="device_type" name="device_type" required>
+                    <option value="Android">Android</option>
+                    <option value="Window">Window</option>
+                    <option value="IOS">IOS</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-4 control-label">Product Type</label>
+                <div class="col-md-6">
+                   <select class="form-control" id="product_type" name="product_type" required>
+                    <option value="MOBILE">Mobile</option>
+                    <option value="TAB">Tab</option>
+                    <option value="LAPTOP">Laptop</option>
+                    <option value="WASHING_MACHINE">Washing Machine</option>
+                    <option value="REFRIGRATOR">Refrigrator</option>
+                    <option value="AC">A.C</option>
+                    <option value="LCD/LED">LCD/LED</option>
+                  </select> 
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-4 control-label">Customer Name</label>
+                <div class="col-md-6">
+                  <input type="text" id="customer_name" class="form-control" name="customer_name" value="" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-4 control-label">Address</label>
+                <div class="col-md-6">
+                  <textarea type="text" id="address" class="form-control" name="address" required></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-4 control-label">Pincode</label>
+                <div class="col-md-6">
+                  <input type="text" id="pincode" class="form-control" name="pincode">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-4 control-label">Email</label>
+                <div class="col-md-6">
+                  <input type="text" id="email" class="form-control" name="email" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-4 control-label">Mobile Number</label>
+                <div class="col-md-6">
+                  <input type="text" id="mobile_number" class="form-control" name="mobile_number" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-4 control-label">Alternate Mobile</label>
+                <div class="col-md-6">
+                  <input type="text" id="alternate_mobile" class="form-control" name="alternate_mobile">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-4 control-label">State</label>
+                <div class="col-md-6">
+                  <input type="text" id="state" class="form-control" name="state" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-4 control-label">City</label>
+                <div class="col-md-6">
+                  <input type="text" id="city" class="form-control" name="city" required>
+                </div>
+              </div>
+
+               <div class="form-group">
+                <label class="col-md-4 control-label">Captcha</label>
+                <div class="col-md-6">
+                  <input type="text" id="alternate_mobile" class="form-control custom-captcha" name="captcha_check" disabled="disabled">
+                  <input type="hidden" id="alternate_mobile" class="form-control custom-captcha-compare" name="custom-captcha-compare">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-4 control-label">Enter Captcha</label>
+                <div class="col-md-6 captcha-field">
+                  <input type="text" id="alternate_mobile" class="form-control custom-captcha-compare-with" name="custom-captcha-compare-with" required>
+                   <img class="captcha-cross validation-cross" src='img/cross.png' />
+                </div>
+              </div>
+
+            </div>
+
+            <div id="submit-confirm-form" style="display:none;">
+              <div class="section-logo col-centered">
+                <div class="sub-logo">
+                  <img src="img/logo.png" alt="Logo" />
+                </div>
+                <div class="sub-tagline">
+                  <span class="tagline">Complete Secure Solution. Your Security, Our Priority</span>
+                </div>
+                <div class="loading-bar">
+                <img src='img/progress_bar.gif' />
+                </div>
+              </div>
+               <div class="form-group">
+                <div class="col-md-6 col-md-offset-4 text-center">
+                  <a id="back" href="#" class="submit-button">Back</a>
+                </div>
               </div>
             </div>
-    
-  </form>
+
+              <div class="form-group">
+                <div class="col-md-6 col-md-offset-4 text-center">
+                  <input  type='submit' name="offer_ride" value="Submit" class="submit-button">
+                </div>
+              </div>
+      
+    </form>
+    </div>
+  </div>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript">
-    $(document).ready(function () {
+    /*$(document).ready(function () {
         //$("#date_of_purchase").datepicker();
          /*$("#date_of_purchase").datepicker(
         {
@@ -190,14 +234,14 @@
         }
         return [false, ''];
        }
-    });*/
+    });
      $("#date_of_purchase").datepicker({
         "dateFormat": "dd-mm-yy",
         "minDate": -14,
         "maxDate": new Date()
     })
     .attr("readonly", true);
-    });
+    });*/
 </script>
 </body>
 
